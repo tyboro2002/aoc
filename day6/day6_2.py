@@ -1,8 +1,12 @@
+from utils import get_path
+
+path = get_path()
+
 height = 4
 lines = []
 operations = []
 
-with open('day6_input.txt') as f:
+with open(path) as f:
     raw_lines = f.readlines()
 
 for i, l in enumerate(raw_lines):

@@ -1,3 +1,7 @@
+from utils import get_path
+
+path = get_path()
+
 start = 50
 zero_counts = 0
 
@@ -15,7 +19,7 @@ def get_next(start, motion):
     return start, zeros
 
 
-with open("day1_1_input.txt", "r") as f:
+with open(path, "r") as f:
     for line in f.readlines():
         old = start
         start, zeros = get_next(start, line.strip())

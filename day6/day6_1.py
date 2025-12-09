@@ -1,7 +1,11 @@
+from utils import get_path
+
+path = get_path()
+
 height = 4
 matrix = []
 operations = []
-with open('day6_input.txt') as f:
+with open(path) as f:
     for l in f.readlines():
         l = l.strip()
         # print(numbers)

@@ -1,5 +1,9 @@
+from utils import get_path
+
+path = get_path()
+
 sum = 0
-with open('day3_test.txt') as f:
+with open(path) as f:
     for l in f.readlines():
         l = l.strip()
         list_all = [int(k) for k in l[:-1]]

@@ -1,7 +1,10 @@
 import re
+from utils import get_path
+
+path = get_path()
 
 output = 0
-with open("day2_input.txt") as f:
+with open(path) as f:
     for l in f.readlines():
         ranges = l.split(",")
         for range_ in ranges:

@@ -1,6 +1,7 @@
 from shapely.geometry import Polygon
-import time
-t0 = time.time()
+from utils import get_path
+
+path = get_path()
 
 def calculate_size(corner1, corner2):
     return (abs(corner1[0] - corner2[0]) + 1) * (abs(corner1[1] - corner2[1]) + 1)
@@ -16,7 +17,7 @@ def read_in_file(file_name):
             input.append([int(e) for e in line.split(",")])
 
 
-read_in_file("day9_input.txt")
+read_in_file(path)
 poly = Polygon(input)
 
 size = len(input)
@@ -45,7 +46,3 @@ while check_coords(distances[i][1], distances[i][2]):
     i += 1
 
 print(i, distances[i])
-
-t1 = time.time()
-total = t1-t0
-print(total)

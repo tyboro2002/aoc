@@ -1,15 +1,18 @@
 import numpy as np
+from utils import get_path
+
+path = get_path()
 
 connect = 1000
 top_sizes = 3
 
 coords = []
-with open("day8_input.txt", 'r') as f:
+with open(path, 'r') as f:
     for l in f.readlines():
         l = l.strip()
         coords.append([int(k) for k in l.split(",")])
 
-print(coords)
+# print(coords)
 
 coords = np.array(coords, np.uint64)
 x, y, z = coords[:, 0], coords[:, 1], coords[:, 2]
@@ -29,7 +32,7 @@ closest_combos = []
 
 def describe_closest():
     closest = find_closest(dist)
-    print(closest, coords[closest[0]], coords[closest[1]])
+    # print(closest, coords[closest[0]], coords[closest[1]])
     return closest
 
 
@@ -37,7 +40,7 @@ for i in range(connect):
     closest_combos.append(describe_closest())
 
 closest_combos.sort(key=lambda x: x[0])
-print(closest_combos)
+# print(closest_combos)
 adjacency_list = {}
 
 unique = set(list(zip(*closest_combos))[0])
@@ -48,7 +51,7 @@ for combo in closest_combos:
     adjacency_list[combo[0]].add(combo[1])
     adjacency_list[combo[1]].add(combo[0])
 
-print(adjacency_list)
+# print(adjacency_list)
 
 
 def find_islands(graph):
@@ -72,7 +75,7 @@ def find_islands(graph):
 
 islands = find_islands(adjacency_list)
 islands.sort(reverse=True)
-print(islands)
+# print(islands)
 prod = 1
 for e in islands[:top_sizes]:
     prod *= e

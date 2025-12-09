@@ -1,4 +1,8 @@
-with open("day5_input.txt", 'r') as f:
+from utils import get_path
+
+path = get_path()
+
+with open(path, 'r') as f:
     encountered_empty = False
     ranges = []
     fresh = 0

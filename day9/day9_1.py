@@ -1,3 +1,7 @@
+from utils import get_path
+
+path = get_path()
+
 def calculate_size(corner1, corner2):
     return (abs(corner1[0] - corner2[0])+1) * (abs(corner1[1] - corner2[1])+1)
 
@@ -9,8 +13,8 @@ def read_in_file(file_name):
             input.append([int(e) for e in line.split(",")])
 
 # print(calculate_size((2,5), (9,7)))
-read_in_file("day9_input.txt")
-print(input)
+read_in_file(path)
+# print(input)
 # print(calculate_size(input[0], input[1]))
 
 size = len(input)

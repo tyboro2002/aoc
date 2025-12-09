@@ -1,6 +1,10 @@
+from utils import get_path
+
+path = get_path()
+
 sum = 0
 amount = 12
-with open('day3_input.txt') as f:
+with open(path) as f:
     for l in f.readlines():
         l = l.strip()
         list_all = [int(k) for k in l]

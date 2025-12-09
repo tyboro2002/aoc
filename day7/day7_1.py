@@ -1,5 +1,9 @@
+from utils import get_path
+
+path = get_path()
+
 matrix = []
-with open("day7_input.txt") as f:
+with open(path) as f:
     for line in f.readlines():
         line = line.strip()
         matrix.append([c for c in line])

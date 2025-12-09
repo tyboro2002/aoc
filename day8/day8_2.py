@@ -1,8 +1,11 @@
 import numpy as np
+from utils import get_path
+
+path = get_path()
 
 last_combo = []
 coords = []
-with open("day8_input.txt", 'r') as f:
+with open(path, 'r') as f:
     for l in f.readlines():
         l = l.strip()
         coords.append([int(k) for k in l.split(",")])
