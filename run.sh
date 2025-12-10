@@ -114,3 +114,14 @@ if [ "$DAG" -eq 9 ]; then
     exit 0
   fi
 fi
+
+if [ "$DAG" -eq 10 ]; then
+  if [ "$DEEL" -eq 1 ]; then
+    PYTHONPATH=$(pwd):$PYTHONPATH python day10/day10_1.py "$INPUT_LOCATIE"
+    exit 0
+  fi
+  if [ "$DEEL" -eq 2 ]; then
+    PYTHONPATH=$(pwd):$PYTHONPATH python day10/day10_2.py "$INPUT_LOCATIE"
+    exit 0
+  fi
+fi

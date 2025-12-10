@@ -15,9 +15,16 @@ source "$VENV_NAME/bin/activate"
 echo "📦 Installing shapely inside $VENV_NAME..."
 pip install shapely
 
+# --- 4. Pulp Installeren ---
+echo "📦 Installing pulp inside $VENV_NAME..."
+pip install pulp
+
 # --- 5. Installatie Controleren ---
 echo "✅ Checking installation..."
 python -c "import shapely; print(f'Shapely version installed: {shapely.__version__}')"
+
+echo "✅ Checking installation..."
+python -c "import pulp; print(f'Pulp version installed: {pulp.__version__}')"
 
 # --- 6. Deactiveren ---
 deactivate
